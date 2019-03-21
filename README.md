@@ -1,7 +1,7 @@
 # PDFTron React Native Sample
 React Native sample project that integrates a document viewer using [PDFTron React Native](https://github.com/PDFTron/pdftron-react-native). Check out the [integration guides](https://www.pdftron.com/documentation/android/guides/react-native) to learn how to add PDFTron to your React Native App.
 
-## Run this project
+## Preparation
 
 ### Android
 Add your [license key and AWS credentials](https://www.pdftron.com/documentation/android/guides/getting-started/integrate-gradle) to the gradle.properties file:
@@ -23,6 +23,22 @@ target 'ReactNativeSample' do
 end
 ```
 Your license key and pod link are confidential. Please make sure that they are not publicly available.
+
+### Run
+```
+npm install
+```
+
+```
+react-native run-android
+```
+
+or
+
+```
+react-native run-ios
+```
+
 
 ## License
 See [License](./LICENSE)
