@@ -13,7 +13,7 @@ PDFTRON_LICENSE_KEY=YOUR_PDFTRON_LICENSE_KEY_GOES_HERE
 Your license key and AWS credentials are confidential. Please make sure that they are not publicly available.
 
 ### iOS
-Add your [license key](https://www.pdftron.com/documentation/ios/guides/getting-started/integrate-cocoapods) to the Podfile:
+Add your [pod link](https://www.pdftron.com/documentation/ios/guides/getting-started/integrate-cocoapods) to the Podfile:
 ```
 target 'ReactNativeSample' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
