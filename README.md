@@ -29,12 +29,12 @@ Your license key and pod link are confidential. Please make sure that they are n
 npm install
 ```
 
+#### Android
 ```
 react-native run-android
 ```
 
-or
-
+#### iOS
 ```
 react-native run-ios
 ```
