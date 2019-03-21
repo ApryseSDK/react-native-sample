@@ -79,9 +79,11 @@ export default class App extends Component<Props> {
       )
     }
 
+    const path = "https://pdftron.s3.amazonaws.com/downloads/pdfref.pdf";
+
     return (
       <DocumentView
-        document="android.resource://mypackagename/raw/sample.pdf"
+        document={path}
         showLeadingNavButton={true}
         leadingNavButtonIcon={Platform.OS === 'ios' ? 'ic_close_black_24px.png' : 'ic_arrow_back_white_24dp'}
         onLeadingNavButtonPressed={this.onLeadingNavButtonPressed}
