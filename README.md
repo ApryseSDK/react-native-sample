@@ -3,14 +3,6 @@ React Native sample project that integrates a document viewer using [PDFTron Rea
 
 ## Preparation
 
-### Android
-Add your [PDFTron credentials](https://www.pdftron.com/documentation/android/guides/getting-started/integrate-gradle?showkey=true) to the `android/gradle.properties` file:
-```
-AWS_ACCESS_KEY=YOUR_ACCESS_KEY_GOES_HERE
-AWS_SECRET_KEY=YOUR_SECRET_KEY_GOES_HERE
-```
-Your PDFTron credentials are confidential. Please make sure that they are not publicly available.
-
 ### iOS
 Add your [pod link](https://www.pdftron.com/documentation/ios/guides/getting-started/integrate-cocoapods) to the `ios/Podfile`:
 ```
