@@ -4,6 +4,6 @@
 target 'ReactNativeSample' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-  pod 'PDFNet', podspec: 'POD_LINK_GOES_HERE'
+  pod 'PDFNet', podspec: 'https://www.pdftron.com/downloads/ios/cocoapods/pdfnet/latest.podspec'
 
 end
