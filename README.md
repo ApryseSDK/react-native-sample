@@ -23,6 +23,9 @@ react-native run-android
 react-native run-ios
 ```
 
+## Upgrade
+
+For updating react-native projects, please check out [here](https://reactnative.dev/docs/upgrading).
 
 ## License
 See [License](./LICENSE)
