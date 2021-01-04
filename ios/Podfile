@@ -1,9 +1,26 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'ReactNativeSample' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  use_frameworks!
+platform :ios, '10.0'
+
+target 'reactnativesample' do
+  use_unimodules!
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
   pod 'PDFNet', podspec: 'https://www.pdftron.com/downloads/ios/cocoapods/pdfnet/latest.podspec'
-
+  
+  # Uncomment the code below to enable Flipper.
+  #
+  # You should not install Flipper in CI environments when creating release
+  # builds, this will lead to significantly slower build times.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work.
+  #
+  #  use_flipper!
+  #  post_install do |installer|
+  #    flipper_post_install(installer)
+  #  end
 end
