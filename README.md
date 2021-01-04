@@ -6,7 +6,7 @@ React Native sample project that integrates a document viewer using [PDFTron Rea
 
 **Android** |  **iOS**
 :--:|:--:
-<img alt='demo-android' src='assets/gifs/android.gif' height="800" /> | <img alt='demo-android' src='assets/gifs/ios.gif' height="800" />
+<img alt='demo-android' src='assets/gifs/android.gif' height="600" /> | <img alt='demo-android' src='assets/gifs/ios.gif' height="600" />
 
 ## Run
 ```
