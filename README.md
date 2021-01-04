@@ -10,17 +10,17 @@ React Native sample project that integrates a document viewer using [PDFTron Rea
 
 ## Run
 ```
-npm install
+yarn install
 ```
 
 ### Android
 ```
-react-native run-android
+yarn run android
 ```
 
 ### iOS
 ```
-react-native run-ios
+yarn run ios
 ```
 
 ## Upgrade
