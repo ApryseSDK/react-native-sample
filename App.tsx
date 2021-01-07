@@ -1,30 +1,47 @@
-import React, {Component} from 'react';
-import {Platform, View, PermissionsAndroid} from 'react-native';
-const {RNPdftron} = require('react-native-pdftron');
-import HomeScreen from './src/HomeScreen';
-import DocumentViewer from './src/DocumentViewer';
+import React, { Component } from "react";
+import { Platform, View, PermissionsAndroid, SafeAreaView } from "react-native";
+const { RNPdftron } = require("react-native-pdftron");
+import HomeScreen from "./src/HomeScreen";
+import DocumentViewer from "./src/DocumentViewer";
+import { NavigationContainer, RouteProp } from "@react-navigation/native";
+import {
+  createStackNavigator,
+  StackNavigationProp,
+} from "@react-navigation/stack";
 
 type AppStates = {
-  onHomeScreen: boolean,
-  document: string,
-  permissionGranted: boolean,
-}
+  permissionGranted: boolean;
+};
+
+const MainStack = createStackNavigator();
+
+type MainStackParamList = {
+  HomeScreen: undefined;
+  DocumentViewer: { document: string };
+};
+
+export type HomeScreenProps = {
+  navigation: StackNavigationProp<MainStackParamList, "HomeScreen">;
+};
+
+export type DocumentViewerProps = {
+  route: RouteProp<MainStackParamList, "DocumentViewer">;
+  navigation: StackNavigationProp<MainStackParamList, "DocumentViewer">;
+};
 
 export default class App extends Component<{}, AppStates> {
-  constructor(props : {}) {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
-      onHomeScreen: true,
-      document: '',
-      permissionGranted: Platform.OS === 'ios' ? true : false,
+      permissionGranted: Platform.OS === "ios",
     };
 
-    RNPdftron.initialize('');
+    RNPdftron.initialize("");
   }
 
   componentDidMount() {
-    if (Platform.OS === 'android') {
+    if (Platform.OS === "android") {
       this.requestStoragePermission();
     }
   }
@@ -32,51 +49,39 @@ export default class App extends Component<{}, AppStates> {
   async requestStoragePermission() {
     try {
       const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE
       );
       if (granted === PermissionsAndroid.RESULTS.GRANTED) {
         this.setState({
           permissionGranted: true,
         });
-        console.log('Storage permission granted');
+        console.log("Storage permission granted");
       } else {
         this.setState({
           permissionGranted: false,
         });
-        console.log('Storage permission denied');
+        console.log("Storage permission denied");
       }
     } catch (err) {
       console.warn(err);
     }
   }
 
-  openDocument = (filePath : string) => {
-    console.log('Opening document with url', filePath);
-    this.setState({
-      document: filePath,
-      onHomeScreen: false,
-    });
-  };
-
-  exitViewer = () => {
-    console.log('Viewer exited');
-    this.setState({
-      onHomeScreen: true,
-    });
-  };
-
   render() {
     if (this.state.permissionGranted) {
-      if (this.state.onHomeScreen) {
-        return <HomeScreen openDocument={this.openDocument.bind(this)} />;
-      } else {
-        return (
-          <DocumentViewer
-            exitViewer={this.exitViewer.bind(this)}
-            filePath={this.state.document}
-          />
-        );
-      }
+      return (
+        <SafeAreaView style={{ flex: 1 }}>
+          <NavigationContainer>
+            <MainStack.Navigator mode="card" headerMode="none">
+              <MainStack.Screen name="HomeScreen" component={HomeScreen} />
+              <MainStack.Screen
+                name="DocumentViewer"
+                component={DocumentViewer}
+              />
+            </MainStack.Navigator>
+          </NavigationContainer>
+        </SafeAreaView>
+      );
     } else {
       return <View></View>;
     }
