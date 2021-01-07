@@ -5,14 +5,16 @@ import {
   Dimensions,
   TouchableOpacity,
   Platform,
+  ImageSourcePropType,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import coverList from "./../assets/file-covers/cover";
 import { HomeScreenProps } from "../App";
 
 // Constants for convenience
-const MARGIN: number = 3;
-const ASPECT_RATIO: number = 1584 / 1224;
+const GRID_MARGIN: number = 3;
+
+const GRID_ASPECT_RATIO = 1584 / 1224;
 
 const NUM_COLUMNS_PORTRAIT: number = 2;
 const NUM_COLUMNS_LANDSCAPE: number = 3;
@@ -37,6 +39,7 @@ const PDF_URLS: Array<string> = [
 type File = {
   filePath: string;
   id: string;
+  cover: ImageSourcePropType;
 };
 
 const files: Array<File> = [];
@@ -45,6 +48,7 @@ for (let i = 0; i < PDF_URLS.length; i++) {
   files.push({
     filePath: PDF_URLS[i],
     id: "HomeScreenThumbnail" + i,
+    cover: coverList[i],
   });
 }
 
@@ -63,8 +67,8 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
     ? NUM_COLUMNS_PORTRAIT
     : NUM_COLUMNS_LANDSCAPE;
   const imageWidth: number =
-    Dimensions.get("window").width / numColumns - MARGIN * 2;
-  const imageHeight: number = imageWidth * ASPECT_RATIO;
+    Dimensions.get("window").width / numColumns - GRID_MARGIN * 2;
+  const imageHeight: number = imageWidth * GRID_ASPECT_RATIO;
   // const gridHeight: number = imageWidth * GRID_ASPECT_RATIO;
 
   return (
@@ -94,8 +98,8 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                   style={{
                     width: imageWidth,
                     height: imageHeight,
-                    margin: MARGIN,
-
+                    margin: GRID_MARGIN,
+                    
                     // shadow
                     shadowColor: "#000",
                     shadowOffset: { width: 3, height: 3 },
@@ -107,7 +111,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                   activeOpacity={0.5}
                   onPress={() => {
                     navigation.navigate("DocumentViewer", {
-                      document: PDF_URLS[index],
+                      document: item.filePath,
                     });
                   }}
                 >
@@ -116,7 +120,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                       width: imageWidth,
                       height: imageHeight,
                     }}
-                    source={coverList[index]}
+                    source={item.cover}
                   />
                 </TouchableOpacity>
               );
