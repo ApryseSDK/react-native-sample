@@ -7,6 +7,7 @@ import {
   Platform,
   ImageSourcePropType,
   StyleSheet,
+  SafeAreaView,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import coverList from "./../assets/file-covers/cover";
@@ -21,7 +22,7 @@ const NUM_COLUMNS_LANDSCAPE: number = 3;
 const NAVIGATION_COLOR: string = Platform.OS === "ios" ? "#fff" : "#48a1e0";
 const TITLE_COLOR: string = Platform.OS === "ios" ? "#007aff" : "#fff";
 
-const BACKGROUND_COLOR: string = "#efeff5";
+const BACKGROUND_COLOR: string = "#f2f2f2";
 
 const PDF_URLS: Array<string> = [
   "https://www.pdftron.com/webviewer/demo/gallery/PDFTRON_about.pdf",
@@ -81,52 +82,54 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
         }}
       >
         {(props) => (
-          <FlatList
-            onLayout={() => {
-              setPortrait(getPortrait);
-            }}
-            style={{ backgroundColor: BACKGROUND_COLOR }}
-            data={files}
-            renderItem={({ index, item }) => {
-              return (
-                <TouchableOpacity
-                  style={{
-                    margin: '1.5%',
-                    width: portrait ? '47%' : '30.33%',
-                    aspectRatio: GRID_ASPECT_RATIO,
-                    
-                    // shadow
-                    shadowColor: "#000",
-                    shadowOffset: { width: 3, height: 3 },
-                    shadowOpacity: 0.2,
-                    shadowRadius: 5,
-                    elevation: 10,
-                    backgroundColor: '#fff',
-                  }}
-                  activeOpacity={0.5}
-                  onPress={() => {
-                    navigation.navigate("DocumentViewer", {
-                      document: item.filePath,
-                    });
-                  }}
-                >
-                  <Image
+          <SafeAreaView style={{ flex: 1 }}>
+            <FlatList
+              onLayout={() => {
+                setPortrait(getPortrait);
+              }}
+              style={{ backgroundColor: BACKGROUND_COLOR }}
+              data={files}
+              renderItem={({ index, item }) => {
+                return (
+                  <TouchableOpacity
                     style={{
-                      resizeMode: 'center',
-                      width: '100%',
-                      height: undefined,
-                      ...StyleSheet.absoluteFillObject,
+                      margin: "1.5%",
+                      width: portrait ? "47%" : "30.33%",
+                      aspectRatio: GRID_ASPECT_RATIO,
+
+                      // shadow
+                      shadowColor: "#000",
+                      shadowOffset: { width: 3, height: 3 },
+                      shadowOpacity: 0.2,
+                      shadowRadius: 5,
+                      elevation: 10,
+                      backgroundColor: "#fff",
                     }}
-                    source={item.cover}
-                  />
-                </TouchableOpacity>
-              );
-            }}
-            numColumns={numColumns}
-            key={portrait ? "portrait" : "landscape"}
-            keyExtractor={(item) => item.id}
-            {...props}
-          />
+                    activeOpacity={0.5}
+                    onPress={() => {
+                      navigation.navigate("DocumentViewer", {
+                        document: item.filePath,
+                      });
+                    }}
+                  >
+                    <Image
+                      style={{
+                        resizeMode: "center",
+                        width: "100%",
+                        height: undefined,
+                        ...StyleSheet.absoluteFillObject,
+                      }}
+                      source={item.cover}
+                    />
+                  </TouchableOpacity>
+                );
+              }}
+              numColumns={numColumns}
+              key={portrait ? "portrait" : "landscape"}
+              keyExtractor={(item) => item.id}
+              {...props}
+            />
+          </SafeAreaView>
         )}
       </HomeScreenStack.Screen>
     </HomeScreenStack.Navigator>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, View, PermissionsAndroid, SafeAreaView } from "react-native";
+import { Platform, View, PermissionsAndroid } from "react-native";
 const { RNPdftron } = require("react-native-pdftron");
 import HomeScreen from "./src/HomeScreen";
 import DocumentViewer from "./src/DocumentViewer";
@@ -70,17 +70,15 @@ export default class App extends Component<{}, AppStates> {
   render() {
     if (this.state.permissionGranted) {
       return (
-        <SafeAreaView style={{ flex: 1 }}>
-          <NavigationContainer>
-            <MainStack.Navigator mode="card" headerMode="none">
-              <MainStack.Screen name="HomeScreen" component={HomeScreen} />
-              <MainStack.Screen
-                name="DocumentViewer"
-                component={DocumentViewer}
-              />
-            </MainStack.Navigator>
-          </NavigationContainer>
-        </SafeAreaView>
+        <NavigationContainer>
+          <MainStack.Navigator mode="card" headerMode="none">
+            <MainStack.Screen name="HomeScreen" component={HomeScreen} />
+            <MainStack.Screen
+              name="DocumentViewer"
+              component={DocumentViewer}
+            />
+          </MainStack.Navigator>
+        </NavigationContainer>
       );
     } else {
       return <View></View>;
