@@ -6,15 +6,14 @@ import {
   TouchableOpacity,
   Platform,
   ImageSourcePropType,
+  StyleSheet,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import coverList from "./../assets/file-covers/cover";
 import { HomeScreenProps } from "../App";
 
 // Constants for convenience
-const GRID_MARGIN: number = 3;
-
-const GRID_ASPECT_RATIO = 1584 / 1224;
+const GRID_ASPECT_RATIO = 1224 / 1584;
 
 const NUM_COLUMNS_PORTRAIT: number = 2;
 const NUM_COLUMNS_LANDSCAPE: number = 3;
@@ -66,10 +65,6 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
   const numColumns: number = portrait
     ? NUM_COLUMNS_PORTRAIT
     : NUM_COLUMNS_LANDSCAPE;
-  const imageWidth: number =
-    Dimensions.get("window").width / numColumns - GRID_MARGIN * 2;
-  const imageHeight: number = imageWidth * GRID_ASPECT_RATIO;
-  // const gridHeight: number = imageWidth * GRID_ASPECT_RATIO;
 
   return (
     <HomeScreenStack.Navigator
@@ -96,9 +91,9 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
               return (
                 <TouchableOpacity
                   style={{
-                    width: imageWidth,
-                    height: imageHeight,
-                    margin: GRID_MARGIN,
+                    margin: '1.5%',
+                    width: portrait ? '47%' : '30.33%',
+                    aspectRatio: GRID_ASPECT_RATIO,
                     
                     // shadow
                     shadowColor: "#000",
@@ -106,7 +101,7 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                     shadowOpacity: 0.2,
                     shadowRadius: 5,
                     elevation: 10,
-                    backgroundColor: BACKGROUND_COLOR,
+                    backgroundColor: '#fff',
                   }}
                   activeOpacity={0.5}
                   onPress={() => {
@@ -117,8 +112,10 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
                 >
                   <Image
                     style={{
-                      width: imageWidth,
-                      height: imageHeight,
+                      resizeMode: 'center',
+                      width: '100%',
+                      height: undefined,
+                      ...StyleSheet.absoluteFillObject,
                     }}
                     source={item.cover}
                   />
