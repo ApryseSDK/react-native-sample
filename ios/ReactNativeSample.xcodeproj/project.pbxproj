@@ -14,6 +14,8 @@
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		96905EF65AED1B983A6B3ABC /* libPods-reactnativesample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-reactnativesample.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		E908AB1D25AE77BE005555F7 /* ic_close_black_24px@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E908AB1B25AE77BE005555F7 /* ic_close_black_24px@3x.png */; };
+		E908AB1E25AE77BE005555F7 /* ic_close_black_24px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E908AB1C25AE77BE005555F7 /* ic_close_black_24px@2x.png */; };
 		E9BB43A72593F52B00CD2593 /* ic_close_black_24px.png in Resources */ = {isa = PBXBuildFile; fileRef = E9BB43A62593F52B00CD2593 /* ic_close_black_24px.png */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		7A4D352CD337FB3A3BF06240 /* Pods-reactnativesample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnativesample.release.xcconfig"; path = "Target Support Files/Pods-reactnativesample/Pods-reactnativesample.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = reactnativesample/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		E908AB1B25AE77BE005555F7 /* ic_close_black_24px@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close_black_24px@3x.png"; sourceTree = "<group>"; };
+		E908AB1C25AE77BE005555F7 /* ic_close_black_24px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_close_black_24px@2x.png"; sourceTree = "<group>"; };
 		E9BB43A62593F52B00CD2593 /* ic_close_black_24px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_black_24px.png; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -84,6 +88,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E908AB1C25AE77BE005555F7 /* ic_close_black_24px@2x.png */,
+				E908AB1B25AE77BE005555F7 /* ic_close_black_24px@3x.png */,
 				E9BB43A62593F52B00CD2593 /* ic_close_black_24px.png */,
 				13B07FAE1A68108700A75B9A /* reactnativesample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -183,6 +189,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E908AB1D25AE77BE005555F7 /* ic_close_black_24px@3x.png in Resources */,
+				E908AB1E25AE77BE005555F7 /* ic_close_black_24px@2x.png in Resources */,
 				E9BB43A72593F52B00CD2593 /* ic_close_black_24px.png in Resources */,
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
