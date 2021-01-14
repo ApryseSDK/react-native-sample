@@ -1,25 +1,45 @@
 {
-  "name": "ReactNativeSample",
-  "version": "0.0.1",
-  "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "postinstall": "cd ios && pod install && cd .."
   },
   "dependencies": {
-    "react": "16.8.3",
-    "react-native": "0.59.1",
-    "react-native-pdftron": "git+https://github.com/PDFTron/pdftron-react-native.git"
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "expo": "~40.0.0",
+    "expo-splash-screen": "~0.8.0",
+    "expo-status-bar": "~1.0.3",
+    "expo-updates": "^0.4.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native": "~0.63.4",
+    "react-native-gesture-handler": "~1.8.0",
+    "react-native-pdftron": "github:PDFTron/pdftron-react-native",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.9",
+    "react-native-screens": "~2.15.0",
+    "react-native-unimodules": "~0.12.0",
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
-    "@babel/core": "7.4.0",
-    "@babel/runtime": "7.4.0",
-    "babel-jest": "24.5.0",
-    "jest": "24.5.0",
-    "metro-react-native-babel-preset": "0.53.1",
-    "react-test-renderer": "16.8.3"
+    "@babel/core": "~7.9.0",
+    "@react-native-community/cli": "^4.13.1",
+    "@react-native-community/cli-platform-android": "^4.13.0",
+    "@react-native-community/cli-platform-ios": "^4.13.0",
+    "@types/react": "~16.9.35",
+    "@types/react-dom": "~16.9.8",
+    "@types/react-native": "~0.63.2",
+    "babel-jest": "~25.2.6",
+    "jest": "~25.2.6",
+    "react-test-renderer": "~16.13.1",
+    "typescript": "~4.0.0"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "private": true,
+  "name": "react-native-sample",
+  "version": "1.0.0"
 }

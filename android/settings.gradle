@@ -1,5 +1,9 @@
-rootProject.name = 'ReactNativeSample'
-include ':react-native-pdftron'
-project(':react-native-pdftron').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-pdftron/android')
+rootProject.name = 'reactnativesample'
+
+apply from: '../node_modules/react-native-unimodules/gradle.groovy'
+includeUnimodulesProjects()
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesSettingsGradle(settings)
 
 include ':app'
