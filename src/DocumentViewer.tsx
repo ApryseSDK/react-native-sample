@@ -9,12 +9,16 @@ const DocumentViewer = ({ route, navigation }: DocumentViewerProps) => {
     <DocumentView
       document={document}
       showLeadingNavButton={true}
+      CollabEnabled={true}
+      autoSaveEnabled={false}
+      onLeadingNavButtonPressed={() => navigation.goBack()}
+      selectAnnotationAfterCreation={false}
+      pageIndicatorEnabled={false}
       leadingNavButtonIcon={
         Platform.OS === "ios"
           ? "ic_close_black_24px.png"
           : "ic_arrow_back_white_24dp"
       }
-      onLeadingNavButtonPressed={() => navigation.goBack()}
     />
   );
 };
