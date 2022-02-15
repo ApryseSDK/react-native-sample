@@ -19,7 +19,7 @@
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
     "react-native-gesture-handler": "~1.8.0",
-    "react-native-pdftron": "github:PDFTron/pdftron-react-native",
+    "@pdftron/react-native-pdf": "^3.0.2-beta.58",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.0",

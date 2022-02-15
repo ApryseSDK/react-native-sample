@@ -10,7 +10,7 @@ target 'reactnativesample' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  pod 'PDFNet', podspec: 'https://www.pdftron.com/downloads/ios/cocoapods/pdfnet/latest.podspec'
+  pod 'PDFNet', podspec: 'https://pdftron.com/downloads/ios/react-native/latest.podspec'
   
   # Uncomment the code below to enable Flipper.
   #

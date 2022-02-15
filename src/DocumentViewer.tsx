@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform } from "react-native";
-import { DocumentView } from "react-native-pdftron";
+import { DocumentView } from "@pdftron/react-native-pdf";
 import { DocumentViewerProps } from "../App";
 
 const DocumentViewer = ({ route, navigation }: DocumentViewerProps) => {

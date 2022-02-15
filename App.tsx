@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Platform, View, PermissionsAndroid } from "react-native";
-const { RNPdftron } = require("react-native-pdftron");
+const { RNPdftron } = require("@pdftron/react-native-pdf");
 import HomeScreen from "./src/HomeScreen";
 import DocumentViewer from "./src/DocumentViewer";
 import { NavigationContainer, RouteProp } from "@react-navigation/native";

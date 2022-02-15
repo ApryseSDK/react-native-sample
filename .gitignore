@@ -8,6 +8,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+yarn.lock
 
 # macOS
 .DS_Store
@@ -38,6 +39,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+Podfile.lock
 
 # Android/IntelliJ
 #
