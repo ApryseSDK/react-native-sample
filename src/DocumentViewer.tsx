@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { Platform } from "react-native";
 import { DocumentView } from "@pdftron/react-native-pdf";
 import { DocumentViewerProps } from "../App";
@@ -8,10 +8,9 @@ const DocumentViewer = ({ route, navigation }: DocumentViewerProps) => {
   const { document } = route.params;
   let _viewer = useRef();
 
-  let onLeadingNavButtonPressed = () => {
-    console.log("leading nav button pressed");
+  const onLeadingNavButtonPressed = () => {
     navigation.goBack();
-    }
+  }
   
   return (
     <DocumentView
@@ -26,7 +25,7 @@ const DocumentViewer = ({ route, navigation }: DocumentViewerProps) => {
           ? "ic_close_black_24px.png"
           : "ic_arrow_back_white_24dp"
       }
-      onLeadingNavButtonPressed={() => { onLeadingNavButtonPressed();}}
+      onLeadingNavButtonPressed={onLeadingNavButtonPressed}
     />
   );
 };
