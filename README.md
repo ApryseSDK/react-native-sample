@@ -8,42 +8,12 @@ React Native sample project that integrates a document viewer using [PDFTron Rea
 :--:|:--:
 <img alt='demo-android' src='assets/gifs/android.gif' height="600" /> | <img alt='demo-android' src='assets/gifs/ios.gif' height="600" />
 
-## Step
+## Usage
 
-1. Create a `local.properties` file inside the android folder with your Android SDK location, for example:
-
-```
-sdk.dir=/Users/<user-name>/Library/Android/sdk
-```
-
-2. Run (this will also run `pod install` for iOS automatically):
-
-```
-yarn install
-```
-
-
-## Run
-
-```
-yarn start
-```
-
-### Android
-
-```
-yarn android
-```
-
-### iOS
-
-```
-yarn iOS
-```
-
-## Upgrade
-
-For updating react-native projects, please check out [here](https://reactnative.dev/docs/upgrading).
+1. Install dependencies by running `yarn install`. This will also run `pod install` for iOS automatically.
+2. Build and run the app by running:
+   - iOS: `yarn ios` 
+   - Android: `yarn android`
 
 ## License
 See [License](./LICENSE)
