@@ -9,6 +9,9 @@ platform :ios, podfile_properties['ios.deploymentTarget'] || '12.4'
 install! 'cocoapods',
   :deterministic_uuids => false
 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
 production = ENV["PRODUCTION"] == "1"
 
 target 'ReactNativeSample' do
