@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.reactnativesample"
+      "bundleIdentifier": "com.pdftron.react-native-sample"
     },
     "android": {
       "adaptiveIcon": {

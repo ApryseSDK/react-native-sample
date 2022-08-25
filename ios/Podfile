@@ -11,7 +11,7 @@ install! 'cocoapods',
 
 production = ENV["PRODUCTION"] == "1"
 
-target 'reactnativesample' do
+target 'ReactNativeSample' do
   use_expo_modules!
   config = use_native_modules!
   pod 'PDFNet', podspec: 'https://pdftron.com/downloads/ios/react-native/latest.podspec'
