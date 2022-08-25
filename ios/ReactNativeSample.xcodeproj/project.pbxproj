@@ -14,7 +14,6 @@
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		4B7216863401CCB0F27D022F /* libPods-ReactNativeSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3199C7687378C17889DB0F /* libPods-ReactNativeSample.a */; };
 		7A6FB6FC615544288B4CA928 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C542F602B014A0DAED7F49E /* noop-file.swift */; };
-		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 		CF6FF03C9A23D412FE89DFF2 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ReactNativeSample/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		D3B05E3A28B7FCAA00ABEA34 /* ReactNativeSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReactNativeSample.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-reactnativesample/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 		92DBD88DE9BF7D494EA9DA96 /* ReactNativeSample */ = {
 			isa = PBXGroup;
 			children = (
-				FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */,
 				CF6FF03C9A23D412FE89DFF2 /* ExpoModulesProvider.swift */,
 			);
 			name = ReactNativeSample;
@@ -322,7 +319,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
 				7A6FB6FC615544288B4CA928 /* noop-file.swift in Sources */,
 				0609142BB409001B5F2B7C50 /* ExpoModulesProvider.swift in Sources */,
 			);
