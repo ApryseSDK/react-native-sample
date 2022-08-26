@@ -1,87 +1,60 @@
-import React, { Component } from "react";
-import { Platform, View, PermissionsAndroid } from "react-native";
-const { RNPdftron } = require("@pdftron/react-native-pdf");
-import HomeScreen from "./src/HomeScreen";
-import DocumentViewer from "./src/DocumentViewer";
-import { NavigationContainer, RouteProp } from "@react-navigation/native";
-import {
-  createStackNavigator,
-  StackNavigationProp,
-} from "@react-navigation/stack";
+import 'react-native-gesture-handler';
 
-type AppStates = {
-  permissionGranted: boolean;
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import * as FileSystem from 'expo-file-system';
+
+import Browser from './components/Browser';
+import PDFViewer from './components/PDFViewer';
+
+if (typeof Intl === 'undefined') {
+  require('intl');
+  require('intl/locale-data/jsonp/en');
+}
+
+type StackParams = {
+  Browser: {currDir: string; path: string};
+  PDFViewer: {currDir: string; path: string};
+  MiscFileViewer: {currDir: string; path: string};
 };
 
-const MainStack = createStackNavigator();
+const Stack = createStackNavigator<StackParams>();
 
-type MainStackParamList = {
-  HomeScreen: undefined;
-  DocumentViewer: { document: string };
-};
+export default function App() {
+  const root: string = FileSystem.documentDirectory || '';
+  const path = root.endsWith('/') ? root.substring(0, root.length - 1) : root;
 
-export type HomeScreenProps = {
-  navigation: StackNavigationProp<MainStackParamList, "HomeScreen">;
-};
-
-export type DocumentViewerProps = {
-  route: RouteProp<MainStackParamList, "DocumentViewer">;
-  navigation: StackNavigationProp<MainStackParamList, "DocumentViewer">;
-};
-
-export default class App extends Component<{}, AppStates> {
-  constructor(props: {}) {
-    super(props);
-
-    this.state = {
-      permissionGranted: Platform.OS === "ios",
-    };
-
-    RNPdftron.initialize("");
-  }
-
-  componentDidMount() {
-    if (Platform.OS === "android") {
-      this.requestStoragePermission();
-    }
-  }
-
-  async requestStoragePermission() {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE
-      );
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        this.setState({
-          permissionGranted: true,
-        });
-        console.log("Storage permission granted");
-      } else {
-        this.setState({
-          permissionGranted: false,
-        });
-        console.log("Storage permission denied");
-      }
-    } catch (err) {
-      console.warn(err);
-    }
-  }
-
-  render() {
-    if (this.state.permissionGranted) {
-      return (
-        <NavigationContainer>
-          <MainStack.Navigator mode="card" headerMode="none">
-            <MainStack.Screen name="HomeScreen" component={HomeScreen} />
-            <MainStack.Screen
-              name="DocumentViewer"
-              component={DocumentViewer}
-            />
-          </MainStack.Navigator>
-        </NavigationContainer>
-      );
-    } else {
-      return <View></View>;
-    }
-  }
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Browser"
+          screenOptions={{
+            headerShown: false,
+          }}>
+          <Stack.Screen
+            name="Browser"
+            component={Browser}
+            initialParams={{
+              path: path,
+              currDir: 'Browser',
+            }}
+            options={({route}) => ({
+              title: route?.params?.currDir || 'Browser',
+            })}
+          />
+          <Stack.Screen
+            name="PDFViewer"
+            component={PDFViewer}
+            options={({route}) => ({
+              title: route?.params?.currDir || 'PDFViewer',
+            })}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
