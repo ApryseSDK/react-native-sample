@@ -17,7 +17,7 @@ production = ENV["PRODUCTION"] == "1"
 target 'ReactNativeSample' do
   use_expo_modules!
   config = use_native_modules!
-  pod 'PDFNet', podspec: 'https://pdftron.com/downloads/ios/react-native/latest.podspec'
+  pod 'PDFNet', podspec: 'https://www.pdftron.com/downloads/ios/cocoapods/xcframeworks/pdfnet/latest.podspec'
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
 
