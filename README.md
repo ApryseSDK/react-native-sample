@@ -1,6 +1,6 @@
-# PDFTron React Native Sample
+# Apryse React Native Sample
 
-React Native sample project that integrates a document viewer using [PDFTron React Native](https://github.com/PDFTron/pdftron-react-native). Check out the [integration guides](https://www.pdftron.com/documentation/android/react-native) to learn how to add PDFTron to your React Native App.
+React Native sample project that integrates a document viewer using [Apryse React Native](https://docs.apryse.com/android/get-started/frameworks/react-native). Check out the [integration guides](https://docs.apryse.com/android/get-started/frameworks/react-native/react-native) to learn how to add Apryse to your React Native App.
 
 ## Preview
 
@@ -17,4 +17,3 @@ React Native sample project that integrates a document viewer using [PDFTron Rea
 
 ## License
 See [License](./LICENSE)
-![](https://onepixel.pdftron.com/react-native-sample)
